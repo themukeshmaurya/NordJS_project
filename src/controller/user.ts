@@ -57,7 +57,6 @@ async function userLogin(req:Request,res:Response){
             return res.status(404).json({status: 'Invalid UserName and Password'});
         }
 
-        //const sessionId = uuidv4();
         const token = setUser(user);
         res.cookie('uid',token);
         res.status(200).json({status: 'User Login Successfully !',Cookie: token, Email:email});
@@ -105,7 +104,6 @@ async function addUserDetails(req: Request, res: Response) {
         return res.status(201).json({ status: 'User ' + result.first_name + ' Successfully Created..', id: result._id });
     }
     catch (error) {
-        // Handle errors
         console.error('Error creating user:', error);
         return res.status(500).json({ error: 'Internal Server Error' });
     }

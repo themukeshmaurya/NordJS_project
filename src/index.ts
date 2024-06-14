@@ -59,7 +59,7 @@ connectionMongoDB('mongodb://localhost:27017/Project_1').then(()=>{
     console.log("mongoose connected");
 }).catch((err:any)=>console.log(err));
 
-//connectToMongoose("mongodb://localhost:27017/shortUrl").then(()=>console.log("Connected database..")).catch((err:any)=>console.error(err));
+
 
 app.use(express.urlencoded({extended:false}));
 
